@@ -8,7 +8,7 @@ public class FormLayout {
     Integer sequence;
     Boolean display = true;
 
-    static mapping = {
+    /*static mapping = {
         table 'CZ_FORM_LAYOUT'
         id generator: 'sequence', params: [sequence: 'SEQ_CZ_FORM_LAYOUT_ID']
         version false
@@ -18,6 +18,20 @@ public class FormLayout {
         displayName column: 'DISPLAY_NAME'
         dataType column: 'DATA_TYPE'
         sequence column: 'SEQUENCE'
+    }*/
+
+    static mapping = {
+        datasource 'tmcz'
+        table 'cz_form_layout'
+        //id generator: 'sequence', params: [sequence: 'seq_cz_form_layout_id']
+        id generator: 'sequence', params: [sequence: 'seq_form_layout_id']
+        version false
+        id column: 'form_layout_id'
+        key column: 'form_key'
+        column column: 'form_column'
+        displayName column: 'display_name'
+        dataType column: 'data_type'
+        sequence column: 'sequence'
     }
 
     static constraints = {
